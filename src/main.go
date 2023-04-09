@@ -95,4 +95,30 @@ func main() {
 
 	fmt.Println("Area del circulo", resultAreaFloat)
 
+	//Uso de paquete fmt
+
+	//Impresion con salto de linea
+
+	hello := "Hello"
+	world := "World"
+
+	fmt.Println(hello, world)
+	fmt.Println(hello, world)
+
+	nombre := "Platzi"
+	cursos := 500
+
+	//Impresion con concatenación en un texto
+
+	fmt.Printf("%s tiene mas de %d cursos\n", nombre, cursos)
+	fmt.Printf("%v tiene mas de %v cursos\n", nombre, cursos)
+
+	//Guardar mensaje concatenado en una variable
+
+	message := fmt.Sprintf("%s tiene mas de %d cursos", nombre, cursos)
+	fmt.Println(message)
+
+	//Obtener tipo de dato de una variable
+	fmt.Printf("Hello data type: %T", hello)
+
 }
