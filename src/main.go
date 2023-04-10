@@ -171,7 +171,33 @@ func main() {
 
 	user := "Maria"
 	password := "12345"
-	fmt.Printf("Is the user %s authorized?: %t", user, isUserAuthorized(user, password))
+	fmt.Printf("Is the user %s authorized?: %t \n", user, isUserAuthorized(user, password))
+
+	//Switch
+
+	messageSwitch := ""
+	switch modulo := 5 % 2; modulo {
+	case 0:
+		messageSwitch = "El modulo es par"
+	default:
+		messageSwitch = "El modulo es impar"
+	}
+	fmt.Println(messageSwitch)
+
+	//Sin condicion
+
+	valueSwitch := 50
+
+	switch {
+	case valueSwitch > 100:
+		messageSwitch = "Es mayor a 100"
+	case valueSwitch < 0:
+		messageSwitch = "Es menor a 0"
+	default:
+		messageSwitch = "Esta entre 0 y 100"
+	}
+
+	fmt.Println(messageSwitch)
 
 }
 
