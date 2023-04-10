@@ -2,7 +2,9 @@ package main
 
 import (
 	"fmt"
+	"log"
 	"math"
+	"strconv"
 )
 
 const pi float64 = 3.14
@@ -122,6 +124,55 @@ func main() {
 	value1, _ := doubleReturn(5)
 	fmt.Println("Value1:", value1)
 
+	//Ciclos
+
+	//For básico - Condicional
+
+	for i := 0; i < 5; i++ {
+		fmt.Println(i)
+	}
+
+	//For while
+
+	counter := 0
+	for counter < 10 {
+		fmt.Println(counter)
+		counter++
+	}
+
+	//For inverso
+
+	for i := 10; i > 0; i-- {
+		fmt.Println(i)
+	}
+
+	//For forever - Tiene que haber una forma dentro del codigo para detenerlo
+
+	counterForever := 0
+
+	for {
+		fmt.Println(counterForever)
+		counterForever++
+
+		if counterForever > 1000 { //Condicion para romper el for infinito
+			break
+		}
+	}
+
+	//Convertir texto a numero
+	value, error := strconv.Atoi("53")
+
+	if error != nil {
+		log.Fatal(error)
+	}
+	fmt.Println(value)
+
+	isParOrImparNumber(value)
+
+	user := "Maria"
+	password := "12345"
+	fmt.Printf("Is the user %s authorized?: %t", user, isUserAuthorized(user, password))
+
 }
 
 func printMessage(message string) {
@@ -152,4 +203,16 @@ func trapeziumArea(firstLenght, secondLenght, height int) int {
 func circleArea(radio float64) float64 {
 	return pi2 * math.Pow(radio, 2)
 
+}
+
+func isParOrImparNumber(number int) {
+	if number%2 == 0 {
+		fmt.Println("Es par")
+	} else {
+		fmt.Println("Es impar")
+	}
+}
+
+func isUserAuthorized(user string, password string) bool {
+	return user == "Maria" && password == "12345"
 }
