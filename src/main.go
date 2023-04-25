@@ -199,6 +199,26 @@ func main() {
 
 	fmt.Println(messageSwitch)
 
+	//Defer
+	defer fmt.Println("Hola")
+	fmt.Println("Mundo")
+
+	//Break y continue
+
+	for i := 0; i < 10; i++ {
+		fmt.Println(i)
+
+		if i == 2 {
+			fmt.Println("Es 2")
+			continue
+		}
+
+		if i == 5 {
+			fmt.Println("Break")
+			break
+		}
+	}
+
 }
 
 func printMessage(message string) {
