@@ -5,6 +5,7 @@ import (
 	"log"
 	"math"
 	"strconv"
+	"strings"
 )
 
 const pi float64 = 3.14
@@ -245,10 +246,18 @@ func main() {
 	slice = append(slice, 7)
 	fmt.Println(slice)
 
-	//Append nueva lista
+	//Append nueva lista / Unir una lista con otra
 	newSlice := []int{8, 9, 10}
 
 	slice = append(slice, newSlice...)
+
+	//Recorrer slices con range
+
+	for i := range slice {
+		fmt.Println(i)
+	}
+
+	isPalindromo("Amor a roma")
 
 }
 
@@ -292,4 +301,20 @@ func isParOrImparNumber(number int) {
 
 func isUserAuthorized(user string, password string) bool {
 	return user == "Maria" && password == "12345"
+}
+
+func isPalindromo(text string) {
+	var textReverse string
+	text = strings.ToLower(text)
+
+	for i := len(text) - 1; i >= 0; i-- {
+		textReverse += strings.ToLower(string(text[i]))
+	}
+
+	if text == textReverse {
+		fmt.Println("Es palindromo")
+	} else {
+		fmt.Println("No es palindromo")
+	}
+
 }
